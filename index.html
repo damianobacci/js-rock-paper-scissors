@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors game</title>
+    <script src="./app.js" defer></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="title">
+      Welcome to a JS rendition of the classic <br />Rock, Paper & Scissors
+      game!
+    </h1>
+    <div class="grid">
+      <section class="icons">
+        <button class="btn" id="Rock">
+          <img id="Rock" src="./rock-icon.png" />
+        </button>
+        <button class="btn" id="Paper">
+          <img id="Paper" src="./paper-icon.png" />
+        </button>
+        <button class="btn" id="Scissors">
+          <img id="Scissors" src="./scissors-icon.png" />
+        </button>
+      </section>
+      <section class="computer-choice" id="computer-choice">
+        <h3>COM</h3>
+      </section>
+      <section class="my-choice" id="my-choice">
+        <h3>1P</h3>
+      </section>
+
+      <section class="result">
+        <h2><span id="result">Pick your choice! ↑</span></h2>
+      </section>
+      <section class="alex-kidd">
+        <img src="alex-kidd.gif" alt="" width="100px" />
+      </section>
+      <section class="score">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1P</td>
+              <td><span id="my-score">0</span></td>
+            </tr>
+            <tr>
+              <td>COM</td>
+              <td><span id="com-score">0</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <section class="janken">
+        <img src="janken.png" alt="" width="140px" />
+      </section>
+    </div>
+  </body>
+</html>

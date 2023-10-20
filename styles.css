@@ -127,6 +127,7 @@ h3 {
 
   .grid {
     grid-template-columns: repeat(3, 1fr);
+    width: 50%;
   }
 
   .icons {

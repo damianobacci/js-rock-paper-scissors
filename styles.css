@@ -18,18 +18,6 @@ body {
 .grid {
   display: grid;
   gap: 15px;
-  grid-template-columns: repeat(3, 1fr);
-  border: 2px solid white;
-  border-radius: 20px;
-  margin: 0 auto;
-  padding: 1em;
-  background-color: #0000fe;
-  overflow: hidden;
-}
-
-.grid {
-  display: grid;
-  gap: 15px;
   grid-template-columns: repeat(1, 1fr);
   border: 2px solid white;
   border-radius: 20px;

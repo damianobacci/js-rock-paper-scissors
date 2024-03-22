@@ -46,15 +46,15 @@ function resetGame() {
 }
 possibleChoices.forEach(function (choice) {
     return choice.addEventListener("click", function (event) {
+        var target = event.target;
         isProcessing = true;
         possibleChoices.forEach(function (choice) { return (choice.disabled = true); });
         resultDisplay.innerHTML = "";
         resultDisplay.innerHTML = "Ready<br>...";
-        myChoiceDisplay.style.backgroundImage =
-            "url(" + event.target.id + ".png)";
+        myChoiceDisplay.style.backgroundImage = "url(" + target.id + ".png)";
         computerChoiceDisplay.style.backgroundImage = "url(question.png)";
         setTimeout(function () {
-            myChoice = event.target.id;
+            myChoice = target.id;
             generateComputerChoice();
             determineWin();
             resetGame();

@@ -52,15 +52,15 @@ function resetGame() {
 
 possibleChoices.forEach((choice) =>
   choice.addEventListener("click", (event) => {
+    const target = event.target as HTMLButtonElement;
     isProcessing = true;
     possibleChoices.forEach((choice) => (choice.disabled = true));
     resultDisplay.innerHTML = "";
     resultDisplay.innerHTML = "Ready<br>...";
-    myChoiceDisplay.style.backgroundImage =
-      "url(" + (event.target as HTMLButtonElement).id + ".png)";
+    myChoiceDisplay.style.backgroundImage = "url(" + target.id + ".png)";
     computerChoiceDisplay.style.backgroundImage = "url(question.png)";
     setTimeout(() => {
-      myChoice = (event.target as HTMLButtonElement).id;
+      myChoice = target.id;
       generateComputerChoice();
       determineWin();
       resetGame();

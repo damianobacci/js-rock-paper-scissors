@@ -1,11 +1,13 @@
-const computerChoiceDisplay = document.getElementById("computer-choice");
-const myChoiceDisplay = document.getElementById("my-choice");
-const resultDisplay = document.getElementById("result");
-const myScore = document.getElementById("my-score");
-const comScore = document.getElementById("com-score");
+const computerChoiceDisplay = <HTMLElement>(
+  document.getElementById("computer-choice")
+);
+const myChoiceDisplay = <HTMLElement>document.getElementById("my-choice");
+const resultDisplay = <HTMLElement>document.getElementById("result");
+const myScore = <HTMLElement>document.getElementById("my-score");
+const comScore = <HTMLElement>document.getElementById("com-score");
 const possibleChoices = document.querySelectorAll("button");
 
-let randomMove;
+let randomMove: string;
 
 function generateComputerChoice() {
   const MOVES = ["Rock", "Paper", "Scissors"];
@@ -15,7 +17,7 @@ function generateComputerChoice() {
   computerChoiceDisplay.style.backgroundImage = "url(" + randomMove + ".png)";
 }
 
-let myChoice;
+let myChoice: string;
 let myCount = 0;
 let comCount = 0;
 
@@ -23,21 +25,21 @@ function determineWin() {
   if (myChoice === "Rock" && randomMove === "Scissors") {
     resultDisplay.innerHTML = "You win<br>!";
     myCount++;
-    myScore.innerHTML = myCount;
+    myScore.innerHTML = myCount.toString();
   } else if (myChoice === "Paper" && randomMove === "Rock") {
     resultDisplay.innerHTML = "You win<br>!";
     myCount++;
-    myScore.innerHTML = myCount;
+    myScore.innerHTML = myCount.toString();
   } else if (myChoice === "Scissors" && randomMove === "Paper") {
     resultDisplay.innerHTML = "You win<br>!";
     myCount++;
-    myScore.innerHTML = myCount;
+    myScore.innerHTML = myCount.toString();
   } else if (myChoice === randomMove) {
     resultDisplay.innerHTML = "Draw<br>!";
   } else {
     resultDisplay.innerHTML = "You lose<br>!";
     comCount++;
-    comScore.innerHTML = comCount;
+    comScore.innerHTML = comCount.toString();
   }
 }
 
@@ -54,10 +56,11 @@ possibleChoices.forEach((choice) =>
     possibleChoices.forEach((choice) => (choice.disabled = true));
     resultDisplay.innerHTML = "";
     resultDisplay.innerHTML = "Ready<br>...";
-    myChoiceDisplay.style.backgroundImage = "url(" + event.target.id + ".png)";
+    myChoiceDisplay.style.backgroundImage =
+      "url(" + (event.target as HTMLButtonElement).id + ".png)";
     computerChoiceDisplay.style.backgroundImage = "url(question.png)";
     setTimeout(() => {
-      myChoice = event.target.id;
+      myChoice = (event.target as HTMLButtonElement).id;
       generateComputerChoice();
       determineWin();
       resetGame();
